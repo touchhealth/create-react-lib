@@ -4,7 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "create-react-lib": "node index.js"
+    "create-react-lib": "node index.js",
+    "clean": "rimraf target",
+    "build": "yarn clean && yarn create-react-lib target",
+    "build-nosb": "yarn clean && yarn create-react-lib --no-storybook target"
   },
   "bin": {
     "create-react-lib": "index.js"
@@ -15,6 +18,10 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.19.0",
+    "copy-dir": "^0.4.0",
     "fs-extra": "^7.0.1"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2"
   }
 }
